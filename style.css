@@ -1089,10 +1089,15 @@ a:hover {
     box-shadow: var(--shadow);
   }
 
-  .nav-links.active {
-    max-height: 400px;
-  }
-
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 70px;
+  right: 0;
+  background: white;
+  width: 100%;
+}
   .nav-links li {
     padding: 1rem 2rem;
   }
@@ -1269,4 +1274,7 @@ a:hover {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary);
+}
+body {
+  overflow-x: hidden;
 }
