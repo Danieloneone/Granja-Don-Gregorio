@@ -253,3 +253,8 @@ function detectarModoOscuro() {
     document.documentElement.toggleAttribute('data-theme', e.matches);
   });
 }
+/* ========== INTERSECTION OBSERVER (FIX) ========== */
+function initIntersectionObserver() {
+  // actualmente no se usa, pero evita error de ejecución
+  // puedes implementarlo después sin romper nada
+} 
