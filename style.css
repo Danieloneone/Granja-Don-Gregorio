@@ -1121,6 +1121,10 @@ a:hover {
     font-size: 1rem;
   }
 
+  .hero-image {
+     background-image: url("images/hero.jpg");
+  } 
+
   .hero-cta {
     flex-direction: column;
     gap: 1rem;
