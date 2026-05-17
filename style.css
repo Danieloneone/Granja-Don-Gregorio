@@ -1,1295 +1,480 @@
-/* ==========================================
-   GRANJA DON GREGORIO - CSS PREMIUM MOBILE
-   ========================================== */
-
-:root {
-  --primary: #2d5016;
-  --primary-light: #3d6b1f;
-  --primary-lighter: #5a8c2f;
-  --secondary: #8b7355;
-  --accent: #d4a574;
-  --sky: #87ceeb;
-  --success: #10b981;
-  --light: #f8f7f3;
-  --light-2: #f0ede5;
-  --dark: #1a1a1a;
-  --text: #333333;
-  --text-light: #666666;
-  --text-lighter: #999999;
-  --border: #e0d9ce;
-  --shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 15px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 20px 60px rgba(0, 0, 0, 0.12);
-  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  --transition-fast: all 0.2s ease-out;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-body {
-  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  color: var(--text);
-  background: var(--light);
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-}
-
-h1 {
-  font-size: 3.5rem;
-  font-family: 'Playfair Display', serif;
-}
-
-h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-size: 1.5rem;
-}
-
-p {
-  color: var(--text-light);
-  margin-bottom: 1rem;
-  line-height: 1.7;
-}
-
-a {
-  color: var(--primary);
-  text-decoration: none;
-  transition: var(--transition-fast);
-}
-
-a:hover {
-  color: var(--accent);
-}
-
-.btn {
-  display: inline-block;
-  padding: 12px 28px;
-  border: 2px solid transparent;
-  border-radius: 8px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: var(--transition);
-  text-align: center;
-  white-space: nowrap;
-  font-family: 'Poppins', sans-serif;
-}
-
-.btn-primary {
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(45, 80, 22, 0.3);
-  font-weight: 700;
-}
-
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(45, 80, 22, 0.4);
-}
-
-.btn-secondary {
-  background: transparent;
-  color: var(--primary);
-  border: 2px solid var(--primary);
-}
-
-.btn-secondary:hover {
-  background: var(--primary);
-  color: white;
-}
-
-.btn-success {
-  background: linear-gradient(135deg, var(--success) 0%, #059669 100%);
-  color: white;
-  box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
-  font-weight: 700;
-}
-
-.btn-success:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
-}
-
-.btn-lg {
-  padding: 15px 45px;
-  font-size: 1.1rem;
-}
-
-.btn-nav {
-  background: var(--primary);
-  color: white;
-  padding: 8px 20px;
-  border-radius: 20px;
-  font-size: 0.9rem;
-  font-weight: 700;
-}
-
-.btn-nav:hover {
-  background: var(--primary-light);
-}
-
-.section-title {
-  font-size: 2.8rem;
-  color: var(--primary);
-  text-align: center;
-  margin-bottom: 1rem;
-  position: relative;
-  display: inline-block;
-  width: 100%;
-}
-
-.section-title::after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 5px;
-  background: linear-gradient(90deg, var(--accent) 0%, var(--secondary) 100%);
-  margin: 0.5rem auto 0;
-  border-radius: 3px;
-}
-
-.section-subtitle {
-  text-align: center;
-  color: var(--text-light);
-  font-size: 1.1rem;
-  margin: 1rem auto 3rem;
-  max-width: 600px;
-}
-
-/* ========== NAVBAR ========== */
-.navbar-container {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(255, 255, 255, 0.95);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 15px rgba(0, 0, 0, 0.06);
-  z-index: 1000;
-  transition: var(--transition);
-}
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.2rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-.logo {
-  display: flex;
-  align-items: center;
-  gap: 0.8rem;
-  font-weight: 700;
-  font-size: 1.3rem;
-  color: var(--primary);
-}
-
-.logo-text {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: -0.5px;
-}
-
-.logo-img {
-  height: 50px;
-  width: auto;
-  object-fit: contain;
-}
-
-.nav-links {
-  display: flex;
-  list-style: none;
-  gap: 2rem;
-  align-items: center;
-}
-
-.nav-link {
-  color: var(--text);
-  font-weight: 500;
-  position: relative;
-  font-size: 0.95rem;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -5px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: var(--transition-fast);
-}
-
-.nav-link:hover::after {
-  width: 100%;
-}
-
-.menu-toggle {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-}
-
-.menu-toggle span {
-  width: 25px;
-  height: 3px;
-  background: var(--primary);
-  border-radius: 2px;
-  transition: var(--transition);
-}
-
-.menu-toggle.active span:nth-child(1) {
-  transform: rotate(45deg) translate(10px, 10px);
-}
-
-.menu-toggle.active span:nth-child(2) {
-  opacity: 0;
-}
-
-.menu-toggle.active span:nth-child(3) {
-  transform: rotate(-45deg) translate(7px, -7px);
-}
-
-/* ========== HERO SECTION ========== */
-.hero {
-  position: relative;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: white;
-  overflow: hidden;
-  margin-top: 70px;
-}
-
-.hero-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-position: center;
-  z-index: 1;
-}
-
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, rgba(45, 80, 22, 0.6) 0%, rgba(139, 115, 85, 0.6) 100%);
-  z-index: 2;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 3;
-  padding: 2rem;
-  animation: fadeInUp 1s ease-out;
-}
-
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.hero-title {
-  font-size: 4rem;
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
-  animation: fadeInUp 1s ease-out 0.2s both;
-}
-
-.hero-subtitle {
-  font-size: 1.4rem;
-  margin-bottom: 2.5rem;
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  color: rgba(255, 255, 255, 0.95);
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-  animation: fadeInUp 1s ease-out 0.4s both;
-  font-weight: 300;
-}
-
-.hero-cta {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  margin-bottom: 4rem;
-  flex-wrap: wrap;
-  animation: fadeInUp 1s ease-out 0.6s both;
-}
-
-.hero-stats {
-  display: flex;
-  justify-content: center;
-  gap: 4rem;
-  animation: fadeInUp 1s ease-out 0.8s both;
-  flex-wrap: wrap;
-}
-
-.stat {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.stat-number {
-  font-size: 2.5rem;
-  font-weight: 800;
-  color: var(--accent);
-}
-
-.stat-label {
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-top: 0.5rem;
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 3;
-  animation: bounce 2s infinite;
-  cursor: pointer;
-}
-
-.hero-scroll span {
-  display: block;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 0.5rem;
-}
-
-.scroll-arrow {
-  width: 24px;
-  height: 24px;
-  margin: 0 auto;
-  border: 2px solid rgba(255, 255, 255, 0.8);
-  border-radius: 12px;
-  position: relative;
-}
-
-.scroll-arrow::after {
-  content: '';
-  position: absolute;
-  top: 6px;
-  left: 50%;
-  width: 2px;
-  height: 8px;
-  background: rgba(255, 255, 255, 0.8);
-  border-radius: 2px;
-  transform: translateX(-50%);
-  animation: scroll-down 1.5s infinite;
-}
-
-@keyframes bounce {
-  0%, 100% {
-    transform: translateX(-50%) translateY(0);
-  }
-  50% {
-    transform: translateX(-50%) translateY(15px);
-  }
-}
-
-@keyframes scroll-down {
-  0% {
-    opacity: 1;
-    transform: translateX(-50%) translateY(0);
-  }
-  100% {
-    opacity: 0;
-    transform: translateX(-50%) translateY(10px);
-  }
-}
-
-/* ========== ABOUT SECTION ========== */
-.about {
-  background: white;
-  padding: 80px 0;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.about-content {
-  animation: fadeInUp 0.8s ease-out;
-}
-
-.about-intro {
-  font-size: 1.2rem;
-  color: var(--text);
-  margin-bottom: 2rem;
-  line-height: 1.8;
-}
-
-.about-highlights {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin: 2rem 0;
-}
-
-.highlight {
-  display: flex;
-  gap: 1rem;
-  padding: 1.5rem;
-  background: linear-gradient(135deg, var(--light) 0%, var(--light-2) 100%);
-  border-radius: 12px;
-  border-left: 4px solid var(--accent);
-  transition: var(--transition);
-}
-
-.highlight:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow);
-}
-
-.highlight-icon {
-  font-size: 2rem;
-  min-width: 50px;
-}
-
-.highlight h4 {
-  color: var(--primary);
-  margin-bottom: 0.5rem;
-  font-size: 1.1rem;
-}
-
-.highlight p {
-  font-size: 0.9rem;
-  margin-bottom: 0;
-}
-
-.about-text {
-  font-size: 1.05rem;
-  line-height: 1.8;
-  color: var(--text);
-}
-
-.about-image {
-  position: relative;
-  animation: fadeInRight 0.8s ease-out;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: var(--shadow-lg);
-  object-fit: cover;
-  height: 400px;
-}
-
-.image-tag {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: rgba(45, 80, 22, 0.9);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 8px;
-  font-weight: 600;
-  font-size: 0.9rem;
-}
-
-@keyframes fadeInRight {
-  from {
-    opacity: 0;
-    transform: translateX(40px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-/* ========== EXPERIENCIAS SECTION ========== */
-.experiences {
-  padding: 80px 0;
-  background: linear-gradient(180deg, var(--light-2) 0%, white 100%);
-}
-
-.experiences-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2.5rem;
-  margin-top: 4rem;
-}
-
-.experience-card {
-  background: white;
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: var(--shadow-md);
-  text-align: center;
-  transition: var(--transition);
-  border-top: 4px solid var(--accent);
-  animation: fadeInUp 0.6s ease-out;
-}
-
-.experience-card:hover {
-  transform: translateY(-10px);
-  box-shadow: var(--shadow-lg);
-}
-
-.experience-icon {
-  font-size: 3.5rem;
-  margin-bottom: 1rem;
-  display: block;
-}
-
-.experience-card h3 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-  font-size: 1.4rem;
-}
-
-.experience-card p {
-  color: var(--text-light);
-  margin-bottom: 1.5rem;
-  line-height: 1.7;
-}
-
-.feature-list {
-  list-style: none;
-  text-align: left;
-  padding: 1.5rem;
-  background: var(--light);
-  border-radius: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.feature-list li {
-  color: var(--text);
-  font-size: 0.95rem;
-  padding-left: 1.5rem;
-  position: relative;
-}
-
-.feature-list li::before {
-  content: '✓';
-  position: absolute;
-  left: 0;
-  color: var(--accent);
-  font-weight: 700;
-}
-
-/* ========== GALERÍA ========== */
-.gallery {
-  padding: 80px 0;
-  background: white;
-}
-
-.gallery-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 2rem;
-  margin-bottom: 3rem;
-}
-
-.gallery-item {
-  position: relative;
-  height: 300px;
-  border-radius: 12px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: var(--shadow-md);
-  transition: var(--transition);
-  background: var(--light);
-}
-
-.gallery-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: var(--transition);
-}
-
-.gallery-item:hover img {
-  transform: scale(1.1);
-}
-
-.gallery-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(45, 80, 22, 0.8);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  opacity: 0;
-  transition: var(--transition);
-}
-
-.gallery-item:hover .gallery-overlay {
-  opacity: 1;
-}
-
-.gallery-zoom {
-  font-size: 2.5rem;
-  color: white;
-}
-
-.gallery-filters {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  flex-wrap: wrap;
-  margin-top: 2rem;
-}
-
-.filter-btn {
-  padding: 8px 20px;
-  border: 2px solid var(--border);
-  background: white;
-  color: var(--text);
-  border-radius: 20px;
-  cursor: pointer;
-  font-weight: 600;
-  font-size: 0.9rem;
-  transition: var(--transition);
-}
-
-.filter-btn:hover,
-.filter-btn.active {
-  background: var(--primary);
-  color: white;
-  border-color: var(--primary);
-}
-
-/* ========== UBICACIÓN ========== */
-.location {
-  padding: 80px 0;
-  background: linear-gradient(180deg, white 0%, var(--light) 100%);
-}
-
-.location-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-bottom: 4rem;
-}
-
-.location-info {
-  background: white;
-  padding: 2rem;
-  border-radius: 12px;
-  box-shadow: var(--shadow-md);
-  text-align: center;
-  transition: var(--transition);
-}
-
-.location-info:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-lg);
-}
-
-.location-info h3 {
-  color: var(--primary);
-  margin-bottom: 1rem;
-}
-
-.location-info p {
-  margin-bottom: 1rem;
-  color: var(--primary);
-  font-weight: 700;
-}
-
-.location-info a {
-  color: white;
-  font-weight: 600;
-}
-
-.map-container {
-  width: 100%;
-  height: 400px;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-
-.map-container iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-/* ========== CONTACTO ========== */
-.contact {
-  padding: 80px 0;
-  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
-}
-
-.contact .section-title {
-  color: white;
-}
-
-.contact .section-title::after {
-  background: var(--accent);
-}
-
-.contact .section-subtitle {
-  color: rgba(255, 255, 255, 0.9);
-}
-
-.contact-wrapper {
-  display: grid;
-  grid-template-columns: 2fr 1fr;
-  gap: 3rem;
-  margin-top: 3rem;
-}
-
-.contact-form-container {
-  background: white;
-  padding: 3rem;
-  border-radius: 15px;
-  box-shadow: var(--shadow-lg);
-}
-
-.contact-form {
-  display: grid;
-  gap: 1.5rem;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-}
-
-.form-group label {
-  color: var(--text);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-  font-size: 0.95rem;
-}
-
-.form-group input,
-.form-group select,
-.form-group textarea {
-  padding: 12px 15px;
-  border: 2px solid var(--border);
-  border-radius: 8px;
-  font-family: 'Poppins', sans-serif;
-  font-size: 0.95rem;
-  transition: var(--transition);
-  background: white;
-  color: var(--text);
-}
-
-.form-group input::placeholder,
-.form-group select::placeholder,
-.form-group textarea::placeholder {
-  color: var(--text-lighter);
-}
-
-.form-group input:focus,
-.form-group select:focus,
-.form-group textarea:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(212, 165, 116, 0.1);
-  background: rgba(212, 165, 116, 0.05);
-}
-
-.form-group textarea {
-  resize: vertical;
-  min-height: 120px;
-}
-
-.contact-info-sidebar {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-}
-
-.info-box {
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-  padding: 1.5rem;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  color: white;
-}
-
-.info-box h3 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-.info-box p {
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 0.8rem;
-  font-size: 0.95rem;
-}
-
-.info-box a {
-  color: white;
-  font-weight: 600;
-}
-
-.highlight-box {
-  background: rgba(16, 185, 129, 0.2);
-  border-color: rgba(16, 185, 129, 0.4);
-}
-
-.highlight-box h3 {
-  color: white;
-}
-
-/* ========== TESTIMONIOS ========== */
-.testimonials {
-  padding: 80px 0;
-  background: white;
-}
-
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
-  margin-top: 3rem;
-}
-
-.testimonial-card {
-  background: linear-gradient(135deg, var(--light) 0%, var(--light-2) 100%);
-  padding: 2rem;
-  border-radius: 12px;
-  border-left: 4px solid var(--accent);
-  transition: var(--transition);
-}
-
-.testimonial-card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-md);
-}
-
-.stars {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-}
-
-.testimonial-card p {
-  color: var(--text);
-  font-style: italic;
-  margin-bottom: 1rem;
-  line-height: 1.7;
-}
-
-.testimonial-author {
-  color: var(--primary);
-  font-weight: 600;
-  font-size: 0.95rem;
-}
-
-/* ========== FOOTER ========== */
-.footer {
-  background: linear-gradient(135deg, #1a3a0f 0%, var(--primary) 100%);
-  color: white;
-  padding: 4rem 0 1rem;
-}
-
-.footer-content {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.footer-section h4 {
-  color: var(--accent);
-  margin-bottom: 1rem;
-  font-size: 1.1rem;
-}
-
-.footer-section p {
-  color: rgba(255, 255, 255, 0.8);
-  margin-bottom: 0.8rem;
-  font-size: 0.95rem;
-}
-
-.footer-section ul {
-  list-style: none;
-}
-
-.footer-section ul li {
-  margin-bottom: 0.8rem;
-}
-
-.footer-section a {
-  color: rgba(255, 255, 255, 0.8);
-  font-weight: 500;
-  transition: var(--transition);
-}
-
-.footer-section a:hover {
-  color: var(--accent);
-}
-
-.social-links {
-  display: flex;
-  gap: 1rem;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 0.9rem;
-}
-
-.footer-bottom p {
-  margin-bottom: 0.5rem;
-}
-
-/* ========== MODAL ========== */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 2000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.95);
-  animation: fadeIn 0.3s ease-out;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-.modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.modal-content {
-  position: relative;
-  width: 90%;
-  max-width: 900px;
-  animation: zoomIn 0.3s ease-out;
-}
-
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-.modal-content img {
-  width: 100%;
-  border-radius: 12px;
-}
-
-.modal-close {
-  position: absolute;
-  right: 30px;
-  top: 30px;
-  color: white;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-  transition: var(--transition);
-  z-index: 2001;
-}
-
-.modal-close:hover {
-  color: var(--accent);
-  transform: rotate(90deg);
-}
-
-/* ========== MOBILE MENU BACKGROUND ========== */
-@media (max-width: 768px) {
-  .nav-links {
-    position: fixed;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 70px);
-    flex-direction: column;
-    background-image: linear-gradient(135deg, rgba(45, 80, 22, 0.92) 0%, rgba(139, 115, 85, 0.92) 100%), url('images/paisaje1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    gap: 0;
-    padding: 2rem 0;
-    transform: translateY(-120%);
-    transition: transform 0.35s ease;
-    z-index: 999;
-    overflow-y: auto;
-    backdrop-filter: blur(5px);
-  }
-
-  .nav-links.active {
-    transform: translateY(0);
-  }
-
-  .nav-links li {
-    padding: 1rem 2rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
-
-  .nav-links .nav-link {
-    color: white;
-    font-weight: 600;
-  }
-
-  .nav-links .nav-link::after {
-    background: var(--accent);
-  }
-
-  .menu-toggle {
-    display: flex;
-  }
-
-  .hero {
-    min-height: 70vh;
-    margin-top: 60px;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-cta {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
-  .hero-stats {
-    gap: 2rem;
-  }
-
-  .about-grid,
-  .contact-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .about-highlights {
-    grid-template-columns: 1fr;
-  }
-
-  .about-image img {
-    height: auto;
-  }
-
-  .experiences-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 1.5rem;
-  }
-
-  .gallery-item {
-    height: 250px;
-  }
-
-  .location-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .map-container {
-    height: 300px;
-  }
-
-  .contact-form-container {
-    padding: 1.5rem;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-
-  h2 {
-    font-size: 1.8rem;
-  }
-
-  .container {
-    padding: 0 1.5rem;
-  }
-
-  .contact-info-sidebar {
-    display: none;
-  }
-
-  .navbar {
-    padding: 1rem 1.5rem;
-  }
-
-  .logo-text {
-    display: none;
-  }
-
-  .logo-img {
-    height: 40px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-title {
-    font-size: 1.5rem;
-  }
-
-  .hero-subtitle {
-    font-size: 0.95rem;
-  }
-
-  .hero-stats {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-
-  .btn {
-    padding: 10px 20px;
-    font-size: 0.9rem;
-  }
-
-  .btn-lg {
-    padding: 12px 30px;
-    font-size: 1rem;
-  }
-
-  .gallery-filters {
-    gap: 0.5rem;
-  }
-
-  .filter-btn {
-    padding: 6px 12px;
-    font-size: 0.8rem;
-  }
-
-  .experiences-grid {
-    gap: 1.5rem;
-  }
-
-  .experience-card {
-    padding: 1.5rem;
-  }
-
-  .section-title {
-    font-size: 1.5rem;
-  }
-
-  .footer-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-
-  .modal-close {
-    right: 15px;
-    top: 15px;
-    font-size: 30px;
-  }
-
-  .container {
-    padding: 0 1rem;
-  }
-}
-
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateX(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
-
-.fade-in {
-  animation: fadeIn 0.6s ease-out;
-}
-
-.slide-in {
-  animation: slideIn 0.6s ease-out;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--light);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--primary);
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Granja Don Gregorio - Hospedaje Rural en Paraguay</title>
+  <meta name="description" content="Descubre Granja Don Gregorio: hospedaje tranquilo en San José de los Arroyos, Paraguay. Naturaleza, paz y autenticidad rural.">
+  
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar-container">
+    <nav class="navbar">
+      <div class="logo">
+        <img src="images/logo.png" alt="Granja Don Gregorio" class="logo-img">
+        <span class="logo-text">Granja Don Gregorio</span>
+      </div>
+
+      <ul class="nav-links">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#nosotros" class="nav-link">Nosotros</a></li>
+        <li><a href="#experiencias" class="nav-link">Experiencias</a></li>
+        <li><a href="#galeria" class="nav-link">Galería</a></li>
+        <li><a href="#contacto" class="nav-link btn-nav">Reservar</a></li>
+      </ul>
+
+      <div class="menu-toggle">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ========== HERO SECTION ========== -->
+  <section class="hero" id="inicio" style="background-image: linear-gradient(135deg, rgba(45, 80, 22, 0.6) 0%, rgba(139, 115, 85, 0.6) 100%), url('images/hero.jpg'); background-size: cover; background-position: center; background-attachment: fixed;">
+    <div class="hero-content">
+      <h1 class="hero-title">Un Refugio de Paz en el Corazón de Paraguay</h1>
+      
+      <p class="hero-subtitle">Hospedaje tranquilo y único donde la naturaleza, la tranquilidad y la autenticidad se encuentran en armonía</p>
+
+      <div class="hero-cta">
+        <a href="#contacto" class="btn btn-primary btn-lg">Reservar Ahora</a>
+        <a href="#nosotros" class="btn btn-secondary btn-lg">Conocer Más</a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-number">5+</span>
+          <span class="stat-label">Años de experiencia</span>
+        </div>
+        <div class="stat">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Naturaleza pura</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-scroll">
+      <span>Desplázate para explorar</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT SECTION ========== -->
+  <section class="about" id="nosotros">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content">
+          <h2 class="section-title">Sobre Granja Don Gregorio</h2>
+          
+          <p class="about-intro">
+            Ubicada en una zona elevada y privilegiada de San José de los Arroyos, 
+            Granja Don Gregorio es más que un hospedaje: es un refugio donde la autenticidad 
+            rural se encuentra con la comodidad.
+          </p>
+
+          <div class="about-highlights">
+            <div class="highlight">
+              <span class="highlight-icon">🌿</span>
+              <div>
+                <h4>Rodeado de Naturaleza</h4>
+                <p>Aire puro, paisajes verdes y tranquilidad absoluta alejado de la ruta internacional</p>
+              </div>
+            </div>
+
+            <div class="highlight">
+              <span class="highlight-icon">☁️</span>
+              <div>
+                <h4>Clima Excepcional</h4>
+                <p>Ubicación en subida que ofrece un clima fresco y agradable durante todo el año</p>
+              </div>
+            </div>
+
+            <div class="highlight">
+              <span class="highlight-icon">🏡</span>
+              <div>
+                <h4>Hospedaje Auténtico</h4>
+                <p>Habitaciones cómodas diseñadas para tu descanso y bienestar total</p>
+              </div>
+            </div>
+
+            <div class="highlight">
+              <span class="highlight-icon">✨</span>
+              <div>
+                <h4>Experiencia Única</h4>
+                <p>Contacto con animales de la granja y actividades rurales auténticas</p>
+              </div>
+            </div>
+          </div>
+
+          <p class="about-text">
+            Nuestro compromiso es ofrecerte una experiencia donde puedas desconectarte 
+            del ruido de la ciudad y reconectarte con lo que realmente importa: 
+            la tranquilidad, la naturaleza y la convivencia auténtica.
+          </p>
+        </div>
+
+        <div class="about-image">
+          <img src="images/hospedaje.jpg" alt="Granja Don Gregorio - Hospedaje rural">
+          <div class="image-tag">Comodidad Rural</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== EXPERIENCIAS SECTION ========== -->
+  <section class="experiences" id="experiencias">
+    <div class="container">
+      <h2 class="section-title">Nuestras Experiencias</h2>
+      <p class="section-subtitle">Actividades diseñadas para conectar con la naturaleza y el estilo de vida rural</p>
+
+      <div class="experiences-grid">
+        <div class="experience-card">
+          <div class="experience-icon">🛏️</div>
+          <h3>Hospedaje Confortable</h3>
+          <p>Habitaciones acogedoras con vistas a la naturaleza, perfectas para descansar y disfrutar de la tranquilidad.</p>
+          <ul class="feature-list">
+            <li>Camas cómodas</li>
+            <li>Baños privados</li>
+            <li>Vistas al jardín</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-icon">🌿</div>
+          <h3>Tours Naturales</h3>
+          <p>Recorre nuestras tierras y descubre la flora, fauna local y paisajes que te cautivarán.</p>
+          <ul class="feature-list">
+            <li>Guías expertos</li>
+            <li>Rutas personalizadas</li>
+            <li>Fotografía de naturaleza</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-icon">🍽️</div>
+          <h3>Gastronomía Rural</h3>
+          <p>Disfruta de comidas caseras auténticas preparadas con ingredientes frescos de la región.</p>
+          <ul class="feature-list">
+            <li>Recetas tradicionales</li>
+            <li>Productos locales</li>
+            <li>Comidas preparadas</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-icon">🐑</div>
+          <h3>Contacto Rural</h3>
+          <p>Interactúa con los animales de la granja: ovejas, ñandúes y más en su hábitat natural.</p>
+          <ul class="feature-list">
+            <li>Alimentar animales</li>
+            <li>Aprender de la granja</li>
+            <li>Fotos memorables</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-icon">📸</div>
+          <h3>Escenas Mágicas</h3>
+          <p>Amaneceres y atardeceres espectaculares listos para capturar en tus fotos.</p>
+          <ul class="feature-list">
+            <li>Miradores perfectos</li>
+            <li>Luz natural dorada</li>
+            <li>Paisajes únicos</li>
+          </ul>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-icon">🎉</div>
+          <h3>Eventos Especiales</h3>
+          <p>Organiza reuniones, celebraciones y eventos en un ambiente natural incomparable.</p>
+          <ul class="feature-list">
+            <li>Espacios amplios</li>
+            <li>Ambiente tranquilo</li>
+            <li>Servicios personalizados</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== GALERÍA ========== -->
+  <section class="gallery" id="galeria">
+    <div class="container">
+      <h2 class="section-title">Explora Nuestro Lugar</h2>
+      <p class="section-subtitle">Imágenes que capturan la esencia de Granja Don Gregorio</p>
+
+      <div class="gallery-grid">
+        <div class="gallery-item" data-category="paisaje">
+          <img src="images/paisaje5.jpg" alt="Plantas al atardecer">
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">🔍</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="plantacion">
+          <img src="images/plantasatardecer.jpg" alt="Plantación con atardecer">
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">🔍</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="paisaje">
+          <img src="images/paisaje2.jpg" alt="Paisaje 2">
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">🔍</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="paisaje">
+          <img src="images/paisaje1.jpg" alt="Paisaje 1">
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">🔍</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="plantacion">
+          <img src="images/plantacion.jpg" alt="Plantación">
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">🔍</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="frutas">
+          <img src="images/frutas.jpg" alt="Frutas frescas">
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">🔍</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="frutas">
+          <img src="images/frutas2.jpg" alt="Frutas de temporada">
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">🔍</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="frutas">
+          <img src="images/frutas3.jpg" alt="Frutas orgánicas">
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">🔍</span>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-category="animales">
+          <img src="images/animales2.jpg" alt="ovejas de la granja">
+          <div class="gallery-overlay">
+            <span class="gallery-zoom">🔍</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery-filters">
+        <button class="filter-btn active" data-filter="*">Todas</button>
+        <button class="filter-btn" data-filter="atardecer">Atardeceres</button>
+        <button class="filter-btn" data-filter="plantacion">Plantaciones</button>
+        <button class="filter-btn" data-filter="paisaje">Paisajes</button>
+        <button class="filter-btn" data-filter="frutas">Frutas</button>
+        <button class="filter-btn" data-filter="animales">Animales</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== UBICACIÓN ========== -->
+  <section class="location">
+    <div class="container">
+      <h2 class="section-title">Ubícanos</h2>
+
+      <div class="location-grid">
+        <div class="location-info">
+          <h3>📍 Ubicación Exacta</h3>
+          <p>San José de los Arroyos, Primavera Km 95, Ruta PY 02, Paraguay</p>
+          <a href="https://maps.app.goo.gl/uuUofXvCyCdTBvN7A?g_st=iw" target="_blank" class="btn btn-primary">
+            Ver en Google Maps
+          </a>
+        </div>
+
+        <div class="location-info">
+          <h3>📞 Contacto Directo</h3>
+          <p><a href="tel:+595986455598">+595 986 455 598</a></p>
+          <p><a href="tel:+595981701252">+595 981 701 252</a></p>
+          <a href="https://wa.me/595986455598" target="_blank" class="btn btn-success">
+            📱 Contactar por WhatsApp
+          </a>
+        </div>
+
+        <div class="location-info">
+          <h3>ℹ️ Información</h3>
+          <p>🌡️ Clima: Fresco y agradable</p>
+          <p>🕐 Atendemos todos los días</p>
+          <p>🚗 Acceso por ruta tranquila</p>
+        </div>
+      </div>
+
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3549.8942876193156!2d-57.7432175!3d-26.0841667!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f36f9e9e9e9e9d%3A0x0!2sSan%20Jos%C3%A9%20de%20los%20Arroyos%2C%20Primavera%20KM%2095!5e0!3m2!1ses!2spy!4v1234567890" 
+                allowfullscreen="" 
+                loading="lazy" 
+                referrerpolicy="no-referrer-when-downgrade"
+                title="Ubicación de Granja Don Gregorio en Google Maps">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACTO ========== -->
+  <section class="contact" id="contacto">
+    <div class="container">
+      <h2 class="section-title">Reserva tu Experiencia</h2>
+      <p class="section-subtitle">Ponte en contacto y planifica tu visita a Granja Don Gregorio</p>
+
+      <div class="contact-wrapper">
+        <div class="contact-form-container">
+          <form id="contactForm" class="contact-form">
+            <div class="form-group">
+              <label for="nombre">Nombre Completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">Correo Electrónico</label>
+              <input type="email" id="email" name="email" placeholder="tu@email.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+595 ...">
+            </div>
+
+            <div class="form-group">
+              <label for="fechas">Fechas de Visita</label>
+              <input type="text" id="fechas" name="fechas" placeholder="Ej: 15-20 de Junio">
+            </div>
+
+            <div class="form-group">
+              <label for="huespedes">Cantidad de Huéspedes</label>
+              <select id="huespedes" name="huespedes" required>
+                <option value="">Selecciona...</option>
+                <option value="1">1 persona</option>
+                <option value="2">2 personas</option>
+                <option value="3-4">3-4 personas</option>
+                <option value="5+">5+ personas</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="mensaje">Mensaje</label>
+              <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos qué te gustaría hacer en la granja..."></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg">Enviar Consulta</button>
+          </form>
+        </div>
+
+        <div class="contact-info-sidebar">
+          <div class="info-box">
+            <h3>📞 Teléfonos</h3>
+            <p><a href="tel:+595986455598">+595 986 455 598</a></p>
+            <p><a href="tel:+595984286171">+595 981 701 252</a></p>
+          </div>
+
+          <div class="info-box">
+            <h3>📍 Dirección</h3>
+            <p>San José de los Arroyos<br>Primavera Km 95, Ruta PY 02<br>Paraguay</p>
+          </div>
+
+          <div class="info-box highlight-box">
+            <h3>⚡ Respuesta Rápida</h3>
+            <p>Te responderemos en menos de 2 horas</p>
+            <a href="https://wa.me/595986455598" target="_blank" class="btn btn-success">
+              WhatsApp
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== TESTIMONIOS ========== -->
+  <section class="testimonials">
+    <div class="container">
+      <h2 class="section-title">Lo que Dicen Nuestros Huéspedes</h2>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Un lugar mágico donde la paz y la naturaleza te abrazan. Volveré una y otra vez."</p>
+          <span class="testimonial-author">- María González</span>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="stars">⭐⭐⭐⭐⭐</div>
+          <p>"Impresionante. Las vistas, el clima, la tranquilidad... todo es perfecto. Recomendado 100%."</p>
+          <span class="testimonial-author">- Noelia Cardenas</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h4>Granja Don Gregorio</h4>
+          <p>Un refugio de paz en el corazón de Paraguay</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Enlaces Rápidos</h4>
+          <ul>
+            <li><a href="#nosotros">Sobre Nosotros</a></li>
+            <li><a href="#experiencias">Experiencias</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <p>📞 +595 986 455 598</p>
+          <p>📱 +595 981 701 252</p>
+          <p>📍 San José de los Arroyos, Km 95, Ruta PY 02</p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Síguenos</h4>
+          <div class="social-links">
+            <a href="https://wa.me/595986455598" target="_blank">WhatsApp</a>
+            <a href="https://www.google.com/maps" target="_blank">Google Maps</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 Granja Don Gregorio. Todos los derechos reservados.</p>
+        <p>Diseñado para ofrecerte la mejor experiencia rural en Paraguay 🌾</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- MODAL PARA GALERÍA -->
+  <div id="galleryModal" class="modal">
+    <div class="modal-content">
+      <span class="modal-close">&times;</span>
+      <img id="modalImage" src="" alt="">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
